@@ -28,7 +28,7 @@ Camera → OpenCV + MediaPipe → Flask API /status → ROS 2 node
 
 ## Control gestures
 
-<img src="TestPhotos/1hehe.jpg" alt="Example hand gesture with one raised finger" width="300">
+<img src="TestPhotos/1hehe.png" alt="Example hand gesture with one raised finger" width="300">
 
 *Example gesture: one raised finger corresponds to the `FORWARD` command.*
 
@@ -154,7 +154,7 @@ Array element order:
 
 ## Experiments and current limitations 
 
-<img src="TestPhotos/AlreadyProcessed.png" alt="Processed test image showing hand landmarks, the FORWARD command, and a depth map with detected obstacle regions" width="700">
+<img src="TestPhotos/AlreadyProcessed.jpg" alt="Processed test image showing hand landmarks, the FORWARD command, and a depth map with detected obstacle regions" width="700">
 
 *Example experimental output: hand landmarks and the recognized gesture on the left; estimated depth and obstacle regions on the right.*
 
