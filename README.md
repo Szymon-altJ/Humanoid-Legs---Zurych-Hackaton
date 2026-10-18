@@ -152,7 +152,7 @@ Array element order:
 | `RIGHT` | `[0, 0, 0, 1, 0]` |
 | `STOP`, `NO_FINGERS`, or an obstacle detected | `[0, 0, 0, 0, 1]` |
 
-## Experiments and current limitations
+## Experiments and current limitations 
 
 <img src="TestPhotos/AlreadyProcessed.png" alt="Processed test image showing hand landmarks, the FORWARD command, and a depth map with detected obstacle regions" width="700">
 
