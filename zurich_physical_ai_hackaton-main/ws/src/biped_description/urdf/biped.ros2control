@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<robot name="biped" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:arg name="use_mock" default="false"/>
+<xacro:arg name="left_port" default="/dev/ttyAMA0"/>
+<xacro:arg name="right_port" default="/dev/ttyAMA2"/>
+
+<xacro:property name="lim" value="0.436332"/>
+
+<xacro:macro name="st_joint" params="name id port sign:=1 zero:=2048">
+  <joint name="${name}">
+    <command_interface name="position">
+      <param name="min">-${lim}</param>
+      <param name="max">${lim}</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+    <param name="id">${id}</param>
+    <param name="port">${port}</param>
+    <param name="sign">${sign}</param>
+    <param name="zero">${zero}</param>
+  </joint>
+</xacro:macro>
+
+<ros2_control name="BipedSystem" type="system">
+  <hardware>
+    <xacro:if value="$(arg use_mock)">
+      <plugin>mock_components/GenericSystem</plugin>
+      <param name="calculate_dynamics">true</param>
+    </xacro:if>
+    <xacro:unless value="$(arg use_mock)">
+      <plugin>st3215_hardware/ST3215System</plugin>
+      <param name="baud">1000000</param>
+
+      <param name="acc">0</param>
+      <param name="speed">0</param>
+      <param name="timeout_ms">5</param>
+
+      <param name="echo">true</param>
+    </xacro:unless>
+  </hardware>
+
+  <xacro:st_joint name="l_up"   id="1" port="$(arg left_port)"  sign="-1"/>
+  <xacro:st_joint name="l_mid"  id="2" port="$(arg left_port)"  sign="1"/>
+  <xacro:st_joint name="l_down" id="3" port="$(arg left_port)"  sign="-1"/>
+
+  <xacro:st_joint name="r_up"   id="4" port="$(arg right_port)" sign="-1"/>
+  <xacro:st_joint name="r_mid"  id="5" port="$(arg right_port)" sign="1"/>
+  <xacro:st_joint name="r_down" id="6" port="$(arg right_port)" sign="1"/>
+</ros2_control>
+
+<link name="imu_link"/>
+<joint name="imu_joint" type="fixed">
+  <parent link="base_link"/>
+  <child link="imu_link"/>
+  <origin xyz="0 0 0.25" rpy="0 0 3.14159265"/>
+</joint>
+
+</robot>

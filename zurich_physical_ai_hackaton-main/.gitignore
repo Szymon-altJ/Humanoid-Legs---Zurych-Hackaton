@@ -1,0 +1,28 @@
+# SSH keys
+/zurich
+/zurich.pub
+/zurich_key
+/zurich_key.pub
+*.pem
+id_*
+
+# ROS 2 / colcon
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv*/
+
+# RL training runs and robot recordings
+rl/runs/
+bags/
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
