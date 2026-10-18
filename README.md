@@ -148,6 +148,10 @@ Array element order:
 
 ## Experiments and current limitations
 
+<img src="TestPhotos/AlreadyProcessed.png" alt="Processed test image showing hand landmarks, the FORWARD command, and a depth map with detected obstacle regions" width="700">
+
+*Example experimental output: hand landmarks and the recognized gesture on the left; estimated depth and obstacle regions on the right.*
+
 `Soft/camera/ImageTest.py` tests still images using the `Intel/dpt-hybrid-midas` model for depth estimation and experimental obstacle detection. It additionally requires `requests`, `Pillow`, `transformers`, a runtime capable of running the model, and a Google Colab display utility. Its image URLs point to the remote repository root; update them to match the actual image locations under `TestPhotos/` before testing.
 
 In the current live camera program, `main.py`, `obstacle_detected` is always set to `false`. The experimental obstacle detection has not yet been integrated into live processing.
