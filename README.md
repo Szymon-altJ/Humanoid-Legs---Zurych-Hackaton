@@ -4,6 +4,12 @@ A humanoid legs project built around **Raspberry Pi 5**, **ROS 2**, and camera-b
 
 The goal is to execute commands while maintaining balance and a stable gait. This repository contains the vision module, a ROS 2 command publisher, an obstacle detection experiment, and mechanical part files. Motor control and stabilization require separate integration; their implementation is not currently included in this repository.
 
+## Robot CAD model
+
+<img src="TestPhotos/robot.png" alt="CAD view of the humanoid robot legs assembly" width="700">
+
+*CAD model of the humanoid legs and their mechanical assembly.*
+
 ## How it works
 
 ```text
