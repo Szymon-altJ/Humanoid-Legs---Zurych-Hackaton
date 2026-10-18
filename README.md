@@ -55,7 +55,9 @@ Recognition uses the vertical positions of finger landmarks in the image. Hold y
 ## Requirements
 
 - Raspberry Pi 5 running Linux with ROS 2 configured.
-- A camera accessible to OpenCV at device index `0` (usually `/dev/video0`).
+- 6 × ST3215 servos for leg actuation.
+- 2 × ESP32-based drivers for the ST3215 servos.
+- Raspberry Pi Camera Module 3. The current code expects the camera to be accessible to OpenCV at device index `0` (usually `/dev/video0`).
 - Python 3 with OpenCV, NumPy, MediaPipe, and Flask.
 - ROS 2 packages: `rclpy` and `std_msgs`.
 - Internet access on the first run to download the MediaPipe model.
