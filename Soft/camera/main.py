@@ -62,7 +62,7 @@ def process_camera():
     global current_frame, current_state
 
     # Bezpośrednie połączenie z /dev/video0
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture("tcp://127.0.0.1:8888/")
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
 
