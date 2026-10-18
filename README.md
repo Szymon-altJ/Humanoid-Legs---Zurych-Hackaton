@@ -22,6 +22,10 @@ Camera → OpenCV + MediaPipe → Flask API /status → ROS 2 node
 
 ## Control gestures
 
+<img src="TestPhotos/1hehe.jpg" alt="Example hand gesture with one raised finger" width="300">
+
+*Example gesture: one raised finger corresponds to the `FORWARD` command.*
+
 Four fingers are counted: index, middle, ring, and little finger. **The thumb is ignored.** If multiple hands are detected, the program uses the first hand returned by the detector.
 
 | Raised fingers | Command | Action |
